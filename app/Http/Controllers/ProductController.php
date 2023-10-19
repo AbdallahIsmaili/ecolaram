@@ -12,8 +12,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Product::query()->paginate(1);
-        return view('product.index', compact('product'));
+        $products = Product::query()->paginate(1);
+        return view('product.index', compact('products'));
     }
 
     /**
@@ -21,7 +21,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $product = new Product();
+        return view('product.create', compact(
+            'product'
+        ));
     }
 
     /**
