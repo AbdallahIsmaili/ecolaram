@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
 </head>
 <body>
-    
+
     <nav class="p-4 mb-4 navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container">
             <a class="navbar-brand" href="#">
@@ -50,6 +50,20 @@
       </nav>
 
     <div class="container">
+      
+      @if ($errors->any())
+
+        <div class="alert alert-danger" role="alert">
+          <strong>Errors</strong> 
+          <ul class="">
+            @foreach ($errors->all() as $error)
+              <li class="">{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+          
+      @endif
+
         @yield('content')
     </div>
 
