@@ -13,7 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::query()->paginate(1);
+        $products = Product::query()->paginate(10);
         return view('product.index', compact('products'));
     }
 
@@ -23,6 +23,7 @@ class ProductController extends Controller
     public function create()
     {
         $product = new Product();
+        
         return view('product.create', compact(
             'product'
         ));
@@ -56,15 +57,19 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('product.edit', compact(
+            'product'
+        ));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(ProductRequest $request, Product $product)
     {
-        //
+        $product->fill($request->validated())->save();
+
+        return to_route('products.index')->with('success', 'Product updated successfully');
     }
 
     /**
@@ -72,6 +77,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return to_route('products.index')->with('success', 'Product deleted successfully');
     }
 }

@@ -12,14 +12,17 @@ class UnsignedNumberInput extends Component
     public $label;
     public $name;
     public $placeholder;
+    public $value;
+
     /**
      * Create a new component instance.
      */
-    public function __construct($label, $name, $placeholder)
+    public function __construct($label, $name, $placeholder, $value)
     {
         $this->label = $label;
         $this->name = $name;
         $this->placeholder = $placeholder;
+        $this->placeholder = $value;
     }
 
     /**

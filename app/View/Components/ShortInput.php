@@ -12,6 +12,7 @@ class ShortInput extends Component
     public $placeholder;
     public $type;
     public $name;
+    public $value;
 
     /**
      * Create a new component instance.
@@ -23,12 +24,13 @@ class ShortInput extends Component
      * @param string $value
      */
 
-    public function __construct($label, $placeholder, $type, $name)
+    public function __construct($label, $placeholder, $type, $name, $value)
     {
         $this->label = $label;
         $this->placeholder = $placeholder;
         $this->type = $type;
         $this->name = $name;
+        $this->value = $value;
     }
 
     /**
