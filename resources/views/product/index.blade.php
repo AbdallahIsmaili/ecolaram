@@ -21,13 +21,15 @@
           @forelse ($products as $product)
 
             <tr>
-              <th scope="row">{{ $product->name }}</th>
-              <td>{{ $product->name }}</td>
-              <td>{{ $product->description }}</td>
-              <td>{{ $product->quantity }}</td>
-              <td>{{ $product->price }}</td>
-              <td>{{ $product->description }}</td>
-              <td>{{ $product->description }}</td>
+              <th class="align-middle" scope="row">{{ $product->id }}</th>
+              <td class="align-middle">{{ $product->name }}</td>
+              <td class="align-middle">{{ $product->description }}</td>
+              <td class="align-middle">{{ $product->quantity }}</td>
+              <td class="align-middle">{{ $product->price }}</td>
+              <td class="align-middle">
+                  <img width="120px" src="storage/{{ $product->image }}">  
+              </td>
+              <td class="align-middle">...</td>
             </tr>
 
             @empty

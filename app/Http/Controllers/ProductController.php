@@ -33,7 +33,14 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        dd($request->validated());
+        $formFields = $request->validated();
+        if($request->hasFile('image')){
+            $formFields['image'] = $request->file('image')->store('uploads/products', 'public');
+        }
+
+        Product::create($formFields);
+
+        return to_route('products.index')->with('success', 'Product created successfully');
     }
 
     /**
