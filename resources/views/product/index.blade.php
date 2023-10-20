@@ -26,9 +26,15 @@
               <td class="align-middle">{{ $product->description }}</td>
               <td class="align-middle">{{ $product->quantity }}</td>
               <td class="align-middle">{{ $product->price }}</td>
+
               <td class="align-middle">
-                  <img width="120px" src="storage/{{ $product->image }}">  
+                <a href="#" class="hover-text"> Hover me
+                  <span class="hover-card">
+                    <img id="hover-img" src="storage/{{ $product->image }}">  
+                  </span>
+                </a>
               </td>
+
               <td class="align-middle">...</td>
             </tr>
 

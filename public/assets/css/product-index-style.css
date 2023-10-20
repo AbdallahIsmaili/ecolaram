@@ -1,0 +1,25 @@
+#hover-img{
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 5px;
+}
+
+.hover-text span.hover-card{
+    display: none;
+}
+
+.hover-text:hover span.hover-card{
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 110%;
+}
+
+.hover-text{
+    color: white;
+    background-color:dodgerblue;
+    border-radius: 4px;
+    padding: 4px 15px;
+    text-decoration: none;
+    position: relative;
+}
